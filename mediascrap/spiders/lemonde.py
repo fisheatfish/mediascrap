@@ -24,7 +24,7 @@ class LemondeSpider(CrawlSpider):
         #site which should be saved
         Rule(
             LinkExtractor(
-                allow=['/(international|politique|societe|economie|culure|idee|planete|sport|sciences|pixels|compus)/article/\d{4}/\d{2}/\w+']),
+                allow=['/(international|politique|societe|economie|culure|idee|planete|sport|sciences|pixels|compus)/article/\d{4}/\d{2}/\d{2}/\w+']),
                 'parse_page')]
                 #allow=('[\/\w-]/article/\d{4}/\d{2}/\d{2}/[\w-]?$')
 
