@@ -13,4 +13,5 @@ class NewsItem(Item):
     # name = scrapy.Field()
     body = Field()
     url = Field()
+    timeOfScrap = Field()
     pass

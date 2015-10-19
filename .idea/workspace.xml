@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae72b11a-23cb-4495-b76e-6ae6c1ee409c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediascrap/items.py" afterPath="$PROJECT_DIR$/mediascrap/items.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediascrap/spiders/lemonde.py" afterPath="$PROJECT_DIR$/mediascrap/spiders/lemonde.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediascrap/pipelines.py" afterPath="$PROJECT_DIR$/mediascrap/pipelines.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediascrap/settings.py" afterPath="$PROJECT_DIR$/mediascrap/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mediascrap.iws" />
@@ -25,11 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="lemonde.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mediascrap/spiders/lemonde.py">
+      <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mediascrap/items.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lemonde.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mediascrap/spiders/lemonde.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3130016">
+              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
               <folding>
                 <element signature="e#28#72#0" expanded="true" />
               </folding>
@@ -41,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/mediascrap/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
               <folding>
                 <element signature="e#193#207#0" expanded="true" />
               </folding>
@@ -49,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mediascrap/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5778491">
+            <state vertical-scroll-proportion="0.0">
               <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
               <folding />
             </state>
@@ -75,12 +86,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mediascrap/spiders/mediaSpider.py" />
-        <option value="$PROJECT_DIR$/mediascrap/items.py" />
         <option value="$PROJECT_DIR$/mediascrap/spiders/libe.py" />
         <option value="$PROJECT_DIR$/mediascrap/spiders/testWhile.py" />
-        <option value="$PROJECT_DIR$/mediascrap/spiders/lemonde.py" />
-        <option value="$PROJECT_DIR$/mediascrap/pipelines.py" />
         <option value="$PROJECT_DIR$/mediascrap/settings.py" />
+        <option value="$PROJECT_DIR$/mediascrap/pipelines.py" />
+        <option value="$PROJECT_DIR$/mediascrap/items.py" />
+        <option value="$PROJECT_DIR$/mediascrap/spiders/lemonde.py" />
       </list>
     </option>
   </component>
@@ -414,7 +425,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445265896706</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Correction d'une erreur dans settings pour l'ecriture sur la table articles">
+      <created>1445268462199</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1445268462199</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -457,7 +474,8 @@
     <MESSAGE value="add MongoDB settings in settings.py" />
     <MESSAGE value="add the connection parameters in the pipelines file. The connecion is on a localhost DB." />
     <MESSAGE value="add the connection parameters in the pipelines file. The connection is on a localhost DB." />
-    <option name="LAST_COMMIT_MESSAGE" value="add the connection parameters in the pipelines file. The connection is on a localhost DB." />
+    <MESSAGE value="Correction d'une erreur dans settings pour l'ecriture sur la table articles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction d'une erreur dans settings pour l'ecriture sur la table articles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -572,28 +590,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mediascrap/spiders/lemonde.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="e#28#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mediascrap/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mediascrap/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
           <folding>
             <element signature="e#193#207#0" expanded="true" />
           </folding>
@@ -602,9 +602,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mediascrap/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5778491">
+        <state vertical-scroll-proportion="0.0">
           <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediascrap/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mediascrap/spiders/lemonde.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3130016">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

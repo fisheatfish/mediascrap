@@ -4,6 +4,7 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from mediascrap.items import NewsItem
+import datetime
 
 
 
@@ -35,6 +36,7 @@ class LemondeSpider(CrawlSpider):
 
         item['body'] = body
         item['url'] = response.url
+        item['timeOfScrap'] = datetime.datetime.now()
 
         return item
 
