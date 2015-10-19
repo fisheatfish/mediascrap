@@ -34,7 +34,6 @@ class LemondeSpider(CrawlSpider):
         item = NewsItem()
 
         item['body'] = body
-        print body
         item['url'] = response.url
 
         return item
