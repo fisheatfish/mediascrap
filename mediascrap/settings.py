@@ -14,11 +14,11 @@ BOT_NAME = 'mediascrap'
 SPIDER_MODULES = ['mediascrap.spiders']
 NEWSPIDER_MODULE = 'mediascrap.spiders'
 
-ITEM_PIPELINE = ['mediascrap.pipelines.MongoDBPipeline',]
+ITEM_PIPELINES = ['mediascrap.pipelines.MongoDBPipeline',]
 MONGODB_SERVER = "localhost"
 MONGODV_PORT = 27017
-MONGODB_DB = "mediascrap"
-MONGODB_COLLECTION = "articlebody"
+MONGODB_DB = "Medias"
+MONGODB_COLLECTION = "articles"
 # Crawl responsibly by ident ifying yourself (and your website) on the user-agent
 #USER_AGENT = 'mediascrap (+http://www.yourdomain.com)'
 
