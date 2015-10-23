@@ -34,10 +34,11 @@ class ChokomagSpider(CrawlSpider):
         hxs = HtmlXPathSelector(response)
         body = ''.join(hxs.select('//div[@class="entry-content clearfix"]/p//text()').extract()).strip()
         item = NewsItem()
+        if len(body)> 0 :
+            item['body'] = body
+            item['url'] = response.url
+            item['timeOfScrap'] = datetime.datetime.now()
 
-        item['body'] = body
-        item['url'] = response.url
-        item['timeOfScrap'] = datetime.datetime.now()
-
-        return item
-
+            return item
+        else :
+            pass
