@@ -5,6 +5,7 @@ from scrapy.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from mediascrap.items import NewsItem
+import datetime
 
 
 
@@ -17,26 +18,26 @@ class ChokomagSpider(CrawlSpider):
     """
 
     name = "chokomag"
-    allowed_domains =["http://chokomag.com/"]
+    allowed_domains =["chokomag.com"]
     start_urls =[
-       "http://chokomag.com/"
+       "http://www.chokomag.com"
     ]
     rules = [
         #site which should be saved
         Rule(
             LinkExtractor(
-
-                allow=['/\d{5}/\w+/\w+/\w+']),
-                callback = 'parse_page')]
+                allow=['/\d+/']),
+                'parse_page')]
 
 
     def parse_page(self,response):
         hxs = HtmlXPathSelector(response)
-        body = ''.join(hxs.select('//div[@id="content"]/article/div/p/text()').extract()).strip()
+        body = ''.join(hxs.select('//div[@class="entry-content clearfix"]/p//text()').extract()).strip()
         item = NewsItem()
 
         item['body'] = body
         item['url'] = response.url
+        item['timeOfScrap'] = datetime.datetime.now()
 
         return item
 
