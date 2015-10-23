@@ -470,7 +470,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445594022553</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="start_urls modification in chokomag&#10;">
+      <created>1445598859033</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1445598859033</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -516,7 +522,8 @@
     <MESSAGE value="Correction d'une erreur dans settings pour l'ecriture sur la table articles" />
     <MESSAGE value="Add the time of the scrapping in the items of the database." />
     <MESSAGE value="Add file chokomag Vincent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add file chokomag Vincent" />
+    <MESSAGE value="start_urls modification in chokomag&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="start_urls modification in chokomag&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
