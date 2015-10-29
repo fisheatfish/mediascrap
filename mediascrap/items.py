@@ -15,3 +15,12 @@ class NewsItem(Item):
     url = Field()
     timeOfScrap = Field()
     pass
+
+
+
+class NettutsItem(Item):
+    # define the fields for your item here like:
+    # name = Field()
+
+    title = Field()
+    pass

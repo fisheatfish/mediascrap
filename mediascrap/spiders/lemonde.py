@@ -27,16 +27,22 @@ class LemondeSpider(CrawlSpider):
             LinkExtractor(
                 allow=['/(international|politique|societe|economie|culure|idee|planete|sport|sciences|pixels|compus)/article/\d{4}/\d{2}/\d{2}/\w+']),
                 'parse_page')]
+
+
+
                 #allow=('[\/\w-]/article/\d{4}/\d{2}/\d{2}/[\w-]?$')
 
     def parse_page(self,response):
         hxs = HtmlXPathSelector(response)
+
         body = ''.join(hxs.select('//div[@id="articleBody"]/p//text()').extract()).strip()
         item = NewsItem()
 
-        item['body'] = body
-        item['url'] = response.url
-        item['timeOfScrap'] = datetime.datetime.now()
+        if len(body)> 0 :
+            item['body'] = body
+            item['url'] = response.url
+            item['timeOfScrap'] = datetime.datetime.now()
 
-        return item
-
+            return item
+        else :
+            pass
