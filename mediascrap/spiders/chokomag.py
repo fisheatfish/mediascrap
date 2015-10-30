@@ -34,7 +34,7 @@ class ChokomagSpider(CrawlSpider):
         #site which should be saved
         Rule(
             LinkExtractor(
-                allow=['/(\d+|\w+)']),
+                allow = ['/(\d+|\w+)']),
                 'parse_page')]
 
 
