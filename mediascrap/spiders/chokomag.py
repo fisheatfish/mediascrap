@@ -8,6 +8,8 @@ from mediascrap.items import NewsItem
 import datetime
 
 
+from pymongo import MongoClient
+
 
 class ChokomagSpider(CrawlSpider):
     """
