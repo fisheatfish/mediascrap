@@ -2,11 +2,21 @@ __author__ = 'grobvincent'
 
 import codecs
 
+from os import path
+import Image
+import numpy as np
+import matplotlib.pyplot as plt
+import random
 from pymongo import MongoClient
 
 import matplotlib.pyplot as plt
 
+import Image
+
 from wordcloud import WordCloud, STOPWORDS
+
+from scipy.misc import imread
+
 
 
 client = MongoClient('localhost', 27017)
@@ -25,13 +35,12 @@ for document in cursor :
 with codecs.open("text_mining/my_stopwords.txt","r",encoding="utf-8") as f:
      read_data = f.readlines()
 
-print(read_data)
 
 
 
 
 stopwords = STOPWORDS.copy()
-print(len(stopwords))
+
 
 for data in read_data:
 
@@ -41,10 +50,18 @@ for data in read_data:
 stopwords = map(lambda s: s.strip(), stopwords)
 
 
-wordcloud = WordCloud(max_words=10000, stopwords=stopwords,
-               random_state=1).generate(test)
+mask_choko = np.array(Image.open("text_mining/chokomag.png"))
 
+
+wordcloud = WordCloud( stopwords=stopwords,background_color="black", max_words=10000,mask=mask_choko).generate(test)
+
+
+
+plt.title("Chokomag")
 plt.imshow(wordcloud)
+wordcloud.to_file("text_mining/chokomag_wc.png")
+plt.axis("off")
+plt.figure()
+plt.imshow(mask_choko, cmap=plt.cm.gray)
 plt.axis("off")
 plt.show()
-

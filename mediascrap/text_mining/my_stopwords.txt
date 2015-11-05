@@ -11,6 +11,8 @@ avec
 avoir
 avais
 bon
+bien
+beaucoup
 car
 c
 ce
@@ -43,6 +45,7 @@ essai
 est
 et
 eu
+faire
 fait
 faites
 fois
@@ -134,3 +137,13 @@ vu
 étions
 été
 être
+chez
+contre
+aux
+toute
+vraiment
+petit
+autres
+petite
+toujours
+était
