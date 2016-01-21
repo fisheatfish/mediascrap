@@ -42,13 +42,13 @@ aspirateur_liens<-function(lien,balise){
     a<-which(substr(links,1,1)=="/")
     for (i in (1:length(a))){
       #links[a[i]]<-paste(substr(lien,1,nchar(lien)-1),links[a[i]],sep="")
-      links[a[i]]<-paste(lien,links[a[i]],sep="")
+      dat<-substr(lien,1,nchar(lien)-1)
+      links[a[i]]<-paste(dat,links[a[i]],sep="")
     }
     
     links<-clean(links,lien)
     
     for (i in 2:length(links)){
-      print(i)
       lego_movie <- try(read_html(links[i]),silent=T)
       if (class(lego_movie)!="try-error"){
         hi<-html_nodes(lego_movie,balise) 
@@ -60,6 +60,7 @@ aspirateur_liens<-function(lien,balise){
     }
     return(links)
 }}
+
 
 liens<-c("http://www.lequipe.fr/","http://www.lemonde.fr/",
          "http://www.lefigaro.fr/","http://www.tf1.fr/",
@@ -77,7 +78,6 @@ liens<-c("http://www.lequipe.fr/","http://www.lemonde.fr/",
          "http://www.radiofrance.fr/","http://www.france5.fr/",
          "http://www.maville.com/","http://www.lavoixdunord.fr/"
          )
-library(rmongodb)
 
 library(rmongodb)
 
@@ -89,10 +89,6 @@ for (i in (1:length(liens))) {
   links<-aspirateur_liens(liens[i],balise)
 
 #On doit maintenant sauver dans mongo dans la table links
-
-
-
-
 
   if (mongo.is.connected(mongo)==TRUE) #Pour checker si on est bien connectés
   
