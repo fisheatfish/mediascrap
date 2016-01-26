@@ -1,6 +1,5 @@
 __author__ = 'Vincent'
 
-
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 from scrapy.selector import HtmlXPathSelector
@@ -9,6 +8,7 @@ import datetime
 
 
 from pymongo import MongoClient
+
 
 
 class ChokomagSpider(CrawlSpider):

@@ -13,19 +13,23 @@ links = db.links
 
 #, { "_id":0,"liste_links": 1}
 
-cursor = links.find({"name" : "http://chokomag.com/"},{ "_id" : 0 ,"liste_links" : 1})
-
-links = 0
+#cursor = links.find({"name" : "http://chokomag.com/"},{ "_id" : 0 ,"liste_links" : 1})
+cursor = links.find({"name":"http://www.sudouest.fr/"},{"_id":0,"name":1,"liste_links":1})
 
 
 for document in cursor:
     links = document
 
-print(links)
 
-links = links['liste_links']
+liste_links = links['liste_links']
+start_links = links['name']
 
-print(links)
+print(start_links)
+global liste_links
+
+global start_links
+
+
 
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
@@ -46,8 +50,8 @@ class ChokomagSpider(CrawlSpider):
     """
 
     name = "many_sites"
-    allowed_domains =["chokomag.com"]
-    start_urls =links
+    #allowed_domains =[start_links[8:21]]
+    start_urls =liste_links
     rules = [
         #site which should be saved
         Rule(
@@ -59,11 +63,18 @@ class ChokomagSpider(CrawlSpider):
     def parse_page(self,response):
         hxs = HtmlXPathSelector(response)
 
-        body = ''.join(hxs.select('//div[@class="entry-content clearfix"]/p//text()').extract()).strip()
+
+        #For rtl //div[@id="article-section"]/p//text()
+        #For lemonde //div[@id="articleBody"]/p//text()
+        #For liberation //div[@class="article-body read-left-padding"]/p//text()
+        #For ma ville //div[@class="elmt-detail article"]/p//text()
+        #For l'equipe
+        body = ''.join(hxs.select('//div[@class="entry-content"]/p//text()').extract()).strip()
 
         item = NewsItem()
 
         if len(body)> 0 :
+            item['site'] = start_links
             item['body'] = body
             item['url'] = response.url
             item['timeOfScrap'] = datetime.datetime.now()
