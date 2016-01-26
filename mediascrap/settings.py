@@ -18,7 +18,7 @@ ITEM_PIPELINES = ['mediascrap.pipelines.MongoDBPipeline',]
 MONGODB_SERVER = "localhost"
 MONGODV_PORT = 27017
 MONGODB_DB = "Medias"
-MONGODB_COLLECTION = "test"
+MONGODB_COLLECTION = "articles"
 # Crawl responsibly by ident ifying yourself (and your website) on the user-agent
 #USER_AGENT = 'mediascrap (+http://www.yourdomain.com)'
 
