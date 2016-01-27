@@ -44,7 +44,7 @@ import datetime
 
 
 
-class ChokomagSpider(CrawlSpider):
+class HuffingtonpostSpider(CrawlSpider):
     """
     A spider crawls domains (in accordance with some  rules we will define
     to collect all the pages that we wish to extract our LemondeItems instances
@@ -73,6 +73,7 @@ class ChokomagSpider(CrawlSpider):
         #For ma ville //div[@class="elmt-detail article"]/p//text()
         #For sud ouest //div[@class="entry-content"]/p//text()
 
+        title = ''.join(hxs.select('//h1[@class="title"]//text()').extract()).strip()
         date_article = ''.join(hxs.select('//span[@class="posted"]').extract()).strip()
         body = ''.join(hxs.select('//div[@id="mainentrycontent"]/p//text()').extract()).strip()
 
@@ -86,6 +87,9 @@ class ChokomagSpider(CrawlSpider):
             item['timeOfScrap'] = datetime.datetime.now()
             if len(date_article)>0 :
                 item['date_article'] = date_article[59:84]
+
+            if len(title)> 0 :
+                item['title']= title
             return item
 
 
