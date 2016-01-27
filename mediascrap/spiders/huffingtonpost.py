@@ -1,3 +1,6 @@
+__author__ = 'grobvincent'
+
+
 from pymongo import MongoClient
 
 
@@ -14,7 +17,7 @@ links = db.links
 #, { "_id":0,"liste_links": 1}
 
 #cursor = links.find({"name" : "http://chokomag.com/"},{ "_id" : 0 ,"liste_links" : 1})
-cursor = links.find({"name":"http://www.sudouest.fr/"},{"_id":0,"name":1,"liste_links":1})
+cursor = links.find({"name":"http://www.huffingtonpost.fr/"},{"_id":0,"name":1,"liste_links":1})
 
 
 for document in cursor:
@@ -49,7 +52,7 @@ class ChokomagSpider(CrawlSpider):
     can extend this class when writing our first spider.
     """
 
-    name = "many_sites"
+    name = "huffingtonpost"
     #allowed_domains =[start_links[8:21]]
     start_urls =liste_links
     rules = [
@@ -68,8 +71,11 @@ class ChokomagSpider(CrawlSpider):
         #For lemonde //div[@id="articleBody"]/p//text()
         #For liberation //div[@class="article-body read-left-padding"]/p//text()
         #For ma ville //div[@class="elmt-detail article"]/p//text()
-        #For l'equipe
-        body = ''.join(hxs.select('//div[@class="entry-content"]/p//text()').extract()).strip()
+        #For sud ouest //div[@class="entry-content"]/p//text()
+
+        date_article = ''.join(hxs.select('//span[@class="posted"]').extract()).strip()
+        body = ''.join(hxs.select('//div[@id="mainentrycontent"]/p//text()').extract()).strip()
+
 
         item = NewsItem()
 
@@ -78,7 +84,10 @@ class ChokomagSpider(CrawlSpider):
             item['body'] = body
             item['url'] = response.url
             item['timeOfScrap'] = datetime.datetime.now()
-
+            if len(date_article)>0 :
+                item['date_article'] = date_article[59:84]
             return item
+
+
         else :
             pass
