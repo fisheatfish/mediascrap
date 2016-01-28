@@ -73,20 +73,30 @@ class LeparisienSpider(CrawlSpider):
         title = ''.join(hxs.select('//h1[@itemprop="headline"]//text()').extract()).strip()
         date_article = ''.join(hxs.select('//time[@itemprop="datePublished"]').extract()).strip()
         body = ''.join(hxs.select('//div[@itemprop="articleBody"]/p//text()').extract()).strip()
+        comments = ''.join(hxs.select('//span[@class="contReac bulleReacCouleur bgCouleur"]//text()').extract()).strip()
+
+
+
 
 
         item = NewsItem()
 
         if len(body)> 0 :
             item['site'] = start_links
-            item['body'] = body
-            item['url'] = response.url
-            item['timeOfScrap'] = datetime.datetime.now()
-            if len(date_article)>0 :
-                item['date_article'] = date_article[16:41]
             if len(title)> 0 :
                 item['title']= title
+            item['body'] = body
+            item['url'] = response.url
 
+            if len(date_article)>0 :
+                item['date_article'] = date_article[16:41]
+
+            if len(comments)> 0 :
+                item['comments']= comments
+            else :
+                item['comments'] = 0
+
+            item['timeOfScrap'] = datetime.datetime.now()
 
             return item
 

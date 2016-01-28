@@ -11,10 +11,12 @@ from scrapy.item import Item, Field
 class NewsItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    title = Field()
     site = Field()
     date_article=Field()
     body = Field()
     url = Field()
+    comments = Field()
     timeOfScrap = Field()
     pass
 

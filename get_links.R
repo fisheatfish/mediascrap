@@ -56,28 +56,36 @@ aspirateur_liens<-function(lien,balise){
         newlinks<-clean(newlinks,lien)  
         links<-c(links,newlinks)
         links<-unique(links)
+        print(i)
         }
     }
     return(links)
 }}
 
 
-liens<-c("http://www.lequipe.fr/","http://www.lemonde.fr/",
-         "http://www.lefigaro.fr/","http://www.tf1.fr/",
-         "http://www.20minutes.fr/","http://www.01net.com/",
-         "http://www.leparisien.fr/","http://www.liberation.fr/",
-         "http://www.lexpress.fr/","http://www.huffingtonpost.fr/",
-         "http://tempsreel.nouvelobs.com/","http://rue89.nouvelobs.com/",
-         "http://www.lepoint.fr/","http://www.france2.fr/",
-         "http://www.europe1.fr/","http://www.ouest-france.fr/",
-         "http://www.france3.fr/","http://www.ladepeche.fr/",
-         "http://www.lesechos.fr/","http://www.m6.fr/",
-         "http://rmc.bfmtv.com/","http://www.slate.fr/",
-         "http://www.letelegramme.fr/","http://www.francesoir.fr/",
-         "http://www.sudouest.fr/","http://www.rtl.fr/",
-         "http://www.radiofrance.fr/","http://www.france5.fr/",
-         "http://www.maville.com/","http://www.lavoixdunord.fr/"
-         )
+
+liens<-c("http://www.lequipe.fr/","http://www.leparisien.fr/","http://www.huffingtonpost.fr/","http://www.rtl.fr/")
+                  
+                  
+
+
+
+# liens<-c("http://www.lequipe.fr/","http://www.lemonde.fr/",
+#          "http://www.lefigaro.fr/","http://www.tf1.fr/",
+#          "http://www.20minutes.fr/","http://www.01net.com/",
+#          "http://www.leparisien.fr/","http://www.liberation.fr/",
+#          "http://www.lexpress.fr/","http://www.huffingtonpost.fr/",
+#          "http://tempsreel.nouvelobs.com/","http://rue89.nouvelobs.com/",
+#          "http://www.lepoint.fr/","http://www.france2.fr/",
+#          "http://www.europe1.fr/","http://www.ouest-france.fr/",
+#          "http://www.france3.fr/","http://www.ladepeche.fr/",
+#          "http://www.lesechos.fr/","http://www.m6.fr/",
+#          "http://rmc.bfmtv.com/","http://www.slate.fr/",
+#          "http://www.letelegramme.fr/","http://www.francesoir.fr/",
+#          "http://www.sudouest.fr/","http://www.rtl.fr/",
+#          "http://www.radiofrance.fr/","http://www.france5.fr/",
+#          "http://www.maville.com/","http://www.lavoixdunord.fr/"
+#          )
 
 library(rmongodb)
 
